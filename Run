@@ -1,5 +1,5 @@
 #!/bin/bash
-cd $(cd $(dirname $0); pwd)
+cd $(cd $(dirname $0) pwd)
 echo -e '\e[1m\e[31m
 𝗦𝗢𝗨𝗥𝗖𝗘 𓅛 𝙏𝙄𝙂𝙀𝙍 is being installed, 
 Please wait until the installation is complete
