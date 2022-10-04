@@ -123,7 +123,7 @@ end
 function edit(chat,rep,text,parse, dis, disn, reply_markup)
 shh = tostring(text)
 if Redis:get(black..'rmzsource') then
-shh = shh:gsub("※",Redis:get(black..'rmzsource'))
+shh = shh:gsub("♔",Redis:get(black..'rmzsource'))
 end
 local listm = Redis:smembers(black.."Words:r")
 for k,v in pairs(listm) do
@@ -141,7 +141,7 @@ end
 function send(chat,rep,text,parse,dis,clear,disn,back,markup)
 sh = tostring(text)
 if Redis:get(black..'rmzsource') then
-sh = sh:gsub("※",Redis:get(black..'rmzsource'))
+sh = sh:gsub("♔",Redis:get(black..'rmzsource'))
 end
 local listm = Redis:smembers(black.."Words:r")
 for k,v in pairs(listm) do
@@ -1886,7 +1886,7 @@ send(msg_chat_id,msg_id,[[
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
 ↯︙يمكنك اضافة الى النص ♔
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
  `#username` ↬ معرف المستخدم
  `#msgs` ↬ عدد الرسائل
  `#name` ↬ اسم المستخدم
@@ -1970,7 +1970,7 @@ send(msg_chat_id,msg_id,[[
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
 ↯︙يمكنك اضافة الى النص ♔
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
  `#username` ↬ معرف المستخدم
  `#msgs` ↬ عدد الرسائل
  `#name` ↬ اسم المستخدم
@@ -2927,7 +2927,7 @@ local chinfo = Redis:get(black.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-send(msg_chat_id,msg_id,'*♔عدد احصائيات البوت الكامله \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n♔عدد المجموعات : '..(Redis:scard(black..'ChekBotAdd') or 0)..'\n♔عدد المشتركين : '..(Redis:scard(black..'Num:User:Pv') or 0)..'*',"md",true)  
+send(msg_chat_id,msg_id,'*♔عدد احصائيات البوت الكامله \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n♔عدد المجموعات : '..(Redis:scard(black..'ChekBotAdd') or 0)..'\n♔عدد المشتركين : '..(Redis:scard(black..'Num:User:Pv') or 0)..'*',"md",true)  
 end
 if text == 'تفعيل' and msg.Dev then
 if Redis:sismember(black..'ban:online',msg.chat_id) then
@@ -3545,7 +3545,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✔️ ❭' else promote = '❬ ❌ ❭'
 end
-PermissionsUser = '*\n♔صلاحيات المستخدم :\nــــــــــــــــــــــ♔ـــــــــــــــــــــ'..'\n♔تغيير المعلومات : '..change_info..'\n♔تثبيت الرسائل : '..pin_messages..'\n♔اضافه مستخدمين : '..invite_users..'\n♔مسح الرسائل : '..delete_messages..'\n♔حظر المستخدمين : '..restrict_members..'\n♔اضافه المشرفين : '..promote..'\n\n*'
+PermissionsUser = '*\n♔صلاحيات المستخدم :\n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••'..'\n♔تغيير المعلومات : '..change_info..'\n♔تثبيت الرسائل : '..pin_messages..'\n♔اضافه مستخدمين : '..invite_users..'\n♔مسح الرسائل : '..delete_messages..'\n♔حظر المستخدمين : '..restrict_members..'\n♔اضافه المشرفين : '..promote..'\n\n*'
 end
 return send(msg_chat_id,msg_id,
 '\n*♔ ايديك : '..UserId..
@@ -3590,7 +3590,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✔️ ❭' else promote = '❬ ❌ ❭'
 end
-PermissionsUser = '*\n♔صلاحيات البوت في الجروب :\nــــــــــــــــــــــ♔ـــــــــــــــــــــ'..'\n♔تغيير المعلومات : '..change_info..'\n♔تثبيت الرسائل : '..pin_messages..'\n♔اضافه مستخدمين : '..invite_users..'\n♔مسح الرسائل : '..delete_messages..'\n♔حظر المستخدمين : '..restrict_members..'\n♔اضافه المشرفين : '..promote..'\n\n*'
+PermissionsUser = '*\n♔صلاحيات البوت في الجروب :\n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••'..'\n♔تغيير المعلومات : '..change_info..'\n♔تثبيت الرسائل : '..pin_messages..'\n♔اضافه مستخدمين : '..invite_users..'\n♔مسح الرسائل : '..delete_messages..'\n♔حظر المستخدمين : '..restrict_members..'\n♔اضافه المشرفين : '..promote..'\n\n*'
 return send(msg_chat_id,msg_id,PermissionsUser,"md",true) 
 end
 
@@ -4797,7 +4797,7 @@ local Info_Members = Redis:smembers(black.."Devss:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه مطورين الثانويين \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه مطورين الثانويين \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4833,7 +4833,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = datar
 }
-LuaTele.sendText(msg.chat_id,msg.id,'※ ♔ قائمه مطورين البوت',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(msg.chat_id,msg.id,'♔ ♔ قائمه مطورين البوت',"md",false, false, false, false, reply_markup)
 end
 if text == 'المالكين' then
 if not msg.Dev then
@@ -4848,7 +4848,7 @@ local Info_Members = Redis:smembers(black.."Owners:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد مالكين حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المالكين \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المالكين \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4875,7 +4875,7 @@ local Info_Members = Redis:smembers(black.."Supcreator:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد منشئين اساسيين حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المنشئين الاساسيين \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المنشئين الاساسيين \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4902,7 +4902,7 @@ local Info_Members = Redis:smembers(black.."Creator:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد منشئين حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المنشئين  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المنشئين  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4929,7 +4929,7 @@ local Info_Members = Redis:smembers(black.."Manger:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد مدراء حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المدراء  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المدراء  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4956,7 +4956,7 @@ local Info_Members = Redis:smembers(black.."Admin:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد ادمنيه حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه الادمنيه  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه الادمنيه  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4983,7 +4983,7 @@ local Info_Members = Redis:smembers(black.."Special:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد مميزين حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المميزين  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المميزين  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5008,7 +5008,7 @@ local Info_Members = Redis:smembers(black.."kholat:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد خولات حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه الخولات  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه الخولات  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5032,7 +5032,7 @@ local Info_Members = Redis:smembers(black.."wtka:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد وتكات ناشفة زي المستشفي , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه الوتكات  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه الوتكات  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5056,7 +5056,7 @@ local Info_Members = Redis:smembers(black.."twhd:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔مفيش متوحدين هنا كلهم اتعالجو 😂😂 , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المتوحدين  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المتوحدين  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5080,7 +5080,7 @@ local Info_Members = Redis:smembers(black.."klb:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔مفيش كلاب هنا ارفعلنل شويه نضيهم عضم 😂😂 , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه الكلاب  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه الكلاب  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5104,7 +5104,7 @@ local Info_Members = Redis:smembers(black.."mar:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔مفيش حمير هنا 😂😂 , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه الحمير  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه الحمير  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5128,7 +5128,7 @@ local Info_Members = Redis:smembers(black.."3ra:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔مفيش عرر هنا 😂😂 , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه العرر  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه العرر  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5152,7 +5152,7 @@ local Info_Members = Redis:smembers(black.."smb:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔مفيش سمباويه هنا 😂😂 , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه السمب  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه السمب  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5176,7 +5176,7 @@ local Info_Members = Redis:smembers(black.."2rd:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔مفيش قرود هنا يصحبي 😂😂 , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه القرود  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه القرود  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5200,7 +5200,7 @@ local Info_Members = Redis:smembers(black.."8by:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔مفيش اغبيه هنا يصحبي 😂😂 , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه الاغبيه  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه الاغبيه  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5228,7 +5228,7 @@ local Info_Members = Redis:smembers(black.."BanAll:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد محظورين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المحظورين عام  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المحظورين عام  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5255,7 +5255,7 @@ local Info_Members = Redis:smembers(black.."ktmAll:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد مكتومين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المكتومين عام  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المكتومين عام  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂??𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5282,7 +5282,7 @@ local Info_Members = Redis:smembers(black.."BanGroup:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد محظورين حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المحظورين  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المحظورين  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5309,7 +5309,7 @@ local Info_Members = Redis:smembers(black.."SilentGroup:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد مكتومين حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المكتومين  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المكتومين  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6726,7 +6726,7 @@ if msg.can_be_deleted_for_all_users == false then
 return send(msg_chat_id,msg_id,"\n*♔ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
-listAdmin = '\n*♔ قائمه الادمنيه \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+listAdmin = '\n*♔ قائمه الادمنيه \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
@@ -6811,7 +6811,7 @@ return send(msg_chat_id,msg_id,"\n*♔ عذرآ البوت ليس ادمن في 
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Bots", "*", 0, 200)
 local List_Members = Info_Members.members
-listBots = '\n*♔ قائمه البوتات \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+listBots = '\n*♔ قائمه البوتات \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 x = 0
 for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
@@ -6823,7 +6823,7 @@ Admin = ""
 end
 listBots = listBots.."*"..k.." - @"..UserInfo.username.."* "..Admin.."\n"
 end
-send(msg_chat_id,msg_id,listBots.."*\nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n♔عدد البوتات التي هي ادمن ( "..x.." )*","md",true)  
+send(msg_chat_id,msg_id,listBots.."*\n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n♔عدد البوتات التي هي ادمن ( "..x.." )*","md",true)  
 end
 
 
@@ -6844,7 +6844,7 @@ local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Recent", "*", 0,
 local List_Members = Info_Members.members
 x = 0
 y = nil
-restricted = '\n*♔ قائمه المقيديين \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+restricted = '\n*♔ قائمه المقيديين \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.is_member == true and Info_Members.members[k].status.luatele == "chatMemberStatusRestricted" then
 y = true
@@ -6889,7 +6889,7 @@ return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة �
 end
 local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
 local List_Members = Info_Members.members
-listall = '\n*♔ قائمه الاعضاء \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+listall = '\n*♔ قائمه الاعضاء \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
 if UserInfo.username ~= "" then
@@ -8826,7 +8826,7 @@ local list = Redis:smembers(black.."List:Filter"..msg_chat_id)
 if #list == 0 then  
 return send(msg_chat_id,msg_id,"*♔ لا يوجد كلمات ممنوعه هنا *","md",true)   
 end  
-Filter = '\n*♔ قائمه المنع \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+Filter = '\n*♔ قائمه المنع \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k,v in pairs(list) do  
 print(v)
 if v:match('photo:(.*)') then
@@ -8922,7 +8922,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(black.."All:Command:List:Group")
-Command = "♔ قائمه الاوامر المضافه العامه  \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+Command = "♔ قائمه الاوامر المضافه العامه  \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
 for k,v in pairs(list) do
 Commands = Redis:get(black.."All:Get:Reides:Commands:Group"..v)
 if Commands then 
@@ -8988,7 +8988,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(black.."Command:List:Group"..msg_chat_id.."")
-Command = "♔ قائمه الاوامر المضافه  \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+Command = "♔ قائمه الاوامر المضافه  \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
 for k,v in pairs(list) do
 Commands = Redis:get(black.."Get:Reides:Commands:Group"..msg_chat_id..":"..v)
 if Commands then 
@@ -9149,7 +9149,7 @@ end
 if Redis:get(black.."Status:AddMe"..msg.chat_id) then
 StatusAddme = '❬ ✔️ ❭' else StatusAddme = '❬ ❌ ❭'
 end
-local protectionGroup = '\n*♔اعدادات حمايه الجروب\n ــــــــــــــــــــــ♔ـــــــــــــــــــــ\n'
+local protectionGroup = '\n*♔اعدادات حمايه الجروب\n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n'
 ..'\n♔جلب الرابط ➤ '..Statuslink
 ..'\n♔جلب الترحيب ➤ '..StatusWelcome
 ..'\n♔الايدي ➤ '..StatusId
@@ -9269,8 +9269,8 @@ end
 if Get_Chat.permissions.can_send_polls then
 polls = '❬ ✔️ ❭' else polls = '❬ ❌ ❭'
 end
-local permissions = '*\n♔صلاحيات الجروب :\nــــــــــــــــــــــ♔ـــــــــــــــــــــ'..'\n♔ارسال الويب : '..web..'\n♔تغيير معلومات الجروب : '..info..'\n♔اضافه مستخدمين : '..invite..'\n♔تثبيت الرسائل : '..pin..'\n♔ارسال الميديا : '..media..'\n♔ارسال الرسائل : '..messges..'\n♔اضافه البوتات : '..other..'\n♔ارسال استفتاء : '..polls..'*\n\n'
-local TextChat = '*\n♔معلومات الجروب :\nــــــــــــــــــــــ♔ـــــــــــــــــــــ'..' \n♔عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n♔عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n♔عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n♔عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n♔اسم الجروب : ❬* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ❭*'
+local permissions = '*\n♔صلاحيات الجروب :\n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••'..'\n♔ارسال الويب : '..web..'\n♔تغيير معلومات الجروب : '..info..'\n♔اضافه مستخدمين : '..invite..'\n♔تثبيت الرسائل : '..pin..'\n♔ارسال الميديا : '..media..'\n♔ارسال الرسائل : '..messges..'\n♔اضافه البوتات : '..other..'\n♔ارسال استفتاء : '..polls..'*\n\n'
+local TextChat = '*\n♔معلومات الجروب :\n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••'..' \n♔عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n♔عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n♔عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n♔عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n♔اسم الجروب : ❬* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ❭*'
 return send(msg_chat_id,msg_id, TextChat..permissions,"md",true)
 end
 if text == 'صلاحيات الجروب' then
@@ -10348,7 +10348,7 @@ if text and text:match("^(.*)$") and tonumber(msg.sender.user_id) ~= tonumber(bl
   ❨ ملف ، ملصق ، متحركه ، صوره
    ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
   ↯︙يمكنك اضافة الى النص ♔
-  ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+  ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
    `#username` ↬ معرف المستخدم
    `#msgs` ↬ عدد الرسائل
    `#name` ↬ اسم المستخدم
@@ -10529,7 +10529,7 @@ if text == ("الردود الانلاين") then
   return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local list = Redis:smembers(black.."List:Manager:inline"..msg_chat_id.."")
-  text = "♔ قائمه الردود الانلاين \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+  text = "♔ قائمه الردود الانلاين \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
   for k,v in pairs(list) do
   if Redis:get(black.."Add:Rd:Manager:Gif:inline"..v..msg_chat_id) then
   db = "متحركه ♔"
@@ -10596,7 +10596,7 @@ if text == "تاك للزوجات" or text == "الزوجات" then
   if #zwgat_list == 0 then 
     return send(msg_chat_id,msg_id,'♔ لايوجد زوجات',"md",true) 
   end 
-  local zwga_list = "♔ عدد الزوجات : "..#zwgat_list.."\n♔ الزوجات :\nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+  local zwga_list = "♔ عدد الزوجات : "..#zwgat_list.."\n♔ الزوجات :\n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
   for k, v in pairs(zwgat_list) do
     local UserInfo = LuaTele.getUser(v)
     local zwga_name = UserInfo.first_name
@@ -10640,7 +10640,7 @@ if text == "تاك للمطلقات" or text == "المطلقات" then
   if #mutlqat_list == 0 then 
     return send(msg_chat_id,msg_id,'♔ لايوجد مطلقات',"md",true) 
   end 
-  local mutlqa_list = "♔ عدد المطلقات : "..#mutlqat_list.."\n♔ المطلقات :\nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+  local mutlqa_list = "♔ عدد المطلقات : "..#mutlqat_list.."\n♔ المطلقات :\n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
   for k, v in pairs(mutlqat_list) do
     local UserInfo = LuaTele.getUser(v)
     local mutlqa_name = UserInfo.first_name
@@ -11016,7 +11016,7 @@ if text == 'قائمه الكت' then
     return send(msg_chat_id,msg_id,"♔ لا يوجد اسأله, ","md",true)  
     end
     if #kit_list > 50 then
-    local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ♔ـــــــــــــــــــــ\n'
+    local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n'
     for i = 1, 30, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11031,7 +11031,7 @@ if text == 'قائمه الكت' then
     return send(msg_chat_id, msg_id, Listkit, 'md', false, false, false, false, reply_markup)
     end
     if #kit_list <= 50 then
-        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ♔ـــــــــــــــــــــ\n'
+        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n'
         for i = 1, #kit_list, 1 do
             Listkit = Listkit.." - "..kit_list[i].."\n"
         end
@@ -11054,7 +11054,7 @@ if Text and Text:match('(.*)/next/(.*)') then
     local kit_list = Redis:smembers(black.."kit:")
     local Residual = #kit_list - num
     if tonumber(IdUser) == tonumber(UserId) and Residual > 30 then
-        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ♔ـــــــــــــــــــــ\n'
+        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n'
     for i = num, anubis, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11069,7 +11069,7 @@ if Text and Text:match('(.*)/next/(.*)') then
     end
     if tonumber(IdUser) == tonumber(UserId) and Residual < 30 then
         local kit_end = num + Residual
-        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ♔ـــــــــــــــــــــ\n'
+        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n'
     for i = num, kit_end, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11093,7 +11093,7 @@ if Text and Text:match('(.*)/l_back/(.*)') then
     local Residual = #kit_list - num
     local back_r = Residual - 30
     if tonumber(IdUser) == tonumber(UserId) then
-        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ♔ـــــــــــــــــــــ\n'
+        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n'
     for i = back_r, Residual, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11117,7 +11117,7 @@ if Text and Text:match('(.*)/back/(.*)') then
     local Residual = #kit_list - num
     local back_r = Residual - 30
     if tonumber(IdUser) == tonumber(UserId) then
-        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ♔ـــــــــــــــــــــ\n'
+        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n'
     for i = anubis, num, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11132,7 +11132,7 @@ if Text and Text:match('(.*)/back/(.*)') then
     end
     if tonumber(IdUser) == tonumber(UserId) and Residual == #kit_list then
         local kit_end = num + Residual
-        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ♔ـــــــــــــــــــــ\n'
+        local Listkit = '\n♔ قائمه الاسأله  \n♔ عدد الاسأله : '..#kit_list..'\n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n'
     for i = 1, 30, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11336,7 +11336,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(black.."List:Rd:Sudo")
-text = "\n♔ قائمة الردود العامه \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+text = "\n♔ قائمة الردود العامه \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
 for k,v in pairs(list) do
 if Redis:get(black.."Add:Rd:Sudo:Gif"..v) then
 db = "متحركه ♔"
@@ -11381,7 +11381,7 @@ send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -11405,7 +11405,7 @@ send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -11429,7 +11429,7 @@ send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -11510,7 +11510,7 @@ SilentGroup = 'مكتوم'
 else
 SilentGroup = 'غير مكتوم'
 end
-send(msg_chat_id,msg_id,"\n*♔ معلومات الكشف \nــــــــــــــــــــــ♔ـــــــــــــــــــــ"..'\n♔الحظر العام : '..BanAll..'\n♔الحظر : '..BanGroup..'\n♔الكتم : '..SilentGroup..'\n♔التقييد : '..Restricted..'*',"md",true)  
+send(msg_chat_id,msg_id,"\n*♔ معلومات الكشف \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••"..'\n♔الحظر العام : '..BanAll..'\n♔الحظر : '..BanGroup..'\n♔الكتم : '..SilentGroup..'\n♔التقييد : '..Restricted..'*',"md",true)  
 end
 if text and text:match('^كشف القيود @(%S+)$') then
 local UserName = text:match('^كشف القيود @(%S+)$')
@@ -11556,7 +11556,7 @@ SilentGroup = 'مكتوم'
 else
 SilentGroup = 'غير مكتوم'
 end
-send(msg_chat_id,msg_id,"\n*♔معلومات الكشف \nــــــــــــــــــــــ♔ـــــــــــــــــــــ"..'\n♔الحظر العام : '..BanAll..'\n♔الحظر : '..BanGroup..'\n♔الكتم : '..SilentGroup..'\n♔التقييد : '..Restricted..'*',"md",true)  
+send(msg_chat_id,msg_id,"\n*♔معلومات الكشف \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••"..'\n♔الحظر العام : '..BanAll..'\n♔الحظر : '..BanGroup..'\n♔الكتم : '..SilentGroup..'\n♔التقييد : '..Restricted..'*',"md",true)  
 end
 if text == 'رفع القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -12620,7 +12620,7 @@ if text == "تاك للبقلبي" or text == "تاك للي فقلبي" or text
   if #heart_list == 0 then
     return send(msg_chat_id,msg_id,"قلبك فاضي محدش فيه","md")
   elseif #heart_list > 0 then
-    your_heart = "الناس الي فقلبك \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+    your_heart = "الناس الي فقلبك \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
     for k,v in pairs(heart_list) do
     local user_info = LuaTele.getUser(v)
     local name = user_info.first_name
@@ -12840,7 +12840,7 @@ send(msg_chat_id,msg_id,[[
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
 ↯︙يمكنك اضافة الى النص ♔
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
  `#username` ↬ معرف المستخدم
  `#msgs` ↬ عدد الرسائل
  `#name` ↬ اسم المستخدم
@@ -13011,7 +13011,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(black.."List:Rd:Sudo:mz")
-text = "\n♔ قائمة الردود المميزه \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+text = "\n♔ قائمة الردود المميزه \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
 for k,v in pairs(list) do
 if Redis:get(black.."Add:Rd:Sudo:mz:Gif"..v) then
 db = "متحركه ♔"
@@ -13231,7 +13231,7 @@ if text and text:match("^(.*)$") and tonumber(msg.sender.user_id) ~= tonumber(bl
   ❨ ملف ، ملصق ، متحركه ، صوره
    ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
   ↯︙يمكنك اضافة الى النص ♔
-  ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+  ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
    `#username` ↬ معرف المستخدم
    `#msgs` ↬ عدد الرسائل
    `#name` ↬ اسم المستخدم
@@ -13351,7 +13351,7 @@ if text == ("الردود الانلاين العامه") then
   return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local list = Redis:smembers(black.."List:Manager:inline3am")
-  text = "♔ قائمه الردود الانلاين \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+  text = "♔ قائمه الردود الانلاين \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
   for k,v in pairs(list) do
   if Redis:get(black.."Add:Rd:Manager:Gif:inline3am"..v) then
   db = "متحركه ♔"
@@ -14882,7 +14882,7 @@ local list = Redis:smembers(black.."List:Manager"..msg_chat_id.."")
 if #list == 0 then
 txx = "♔ عذرا لا يوجد ردود للمدير في الجروب"
 else
-txx = "♔ قائمه الردود \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+txx = "♔ قائمه الردود \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
 for k,v in pairs(list) do
 if Redis:get(black.."Add:Rd:Manager:Gif"..v..msg_chat_id) then
 db = "متحركه ♔"
@@ -15029,29 +15029,29 @@ return false
 end
 if text == "استبدال كلمه" then
 if not msg.Devss then
-return send(msg_chat_id,msg_id,'\n*※ هذا الامر يخص  '..Controller_Num(2)..' * ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*♔ هذا الامر يخص  '..Controller_Num(2)..' * ',"md",true)  
 end
 Redis:set(black..msg.chat_id..msg.sender.user_id.."replace",true)
-return LuaTele.sendText(msg_chat_id,msg_id,'\n※ ارسل الكلمه القديمه ليتم استبدالها',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n♔ ارسل الكلمه القديمه ليتم استبدالها',"md",true)  
 end
 if text == "مسح الكلمات المستبدله" then
 if not msg.Devss then
-return send(msg_chat_id,msg_id,'\n*※ هذا الامر يخص  '..Controller_Num(2)..' * ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*♔ هذا الامر يخص  '..Controller_Num(2)..' * ',"md",true)  
 end
 local list = Redis:smembers(black.."Words:r")
 for k,v in pairs(list) do
 Redis:del(black.."Word:Replace"..v)
 end
 Redis:del(black.."Words:r")
-send(msg_chat_id,msg_id,"※ تم مسح الكلمات المستبدله")
+send(msg_chat_id,msg_id,"♔ تم مسح الكلمات المستبدله")
 end
 if text == "الكلمات المستبدله" then
 if not msg.Devss then
-return send(msg_chat_id,msg_id,'\n*※ هذا الامر يخص  '..Controller_Num(2)..' * ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*♔ هذا الامر يخص  '..Controller_Num(2)..' * ',"md",true)  
 end
 local list = Redis:smembers(black.."Words:r")
 if #list == 0 then
-return send(msg.chat_id,msg.id,"※ لا توجد كلمات مستبدله")
+return send(msg.chat_id,msg.id,"♔ لا توجد كلمات مستبدله")
 end
 local txx = " قائمه الكلمات المستبدله \n"
 for k,v in pairs(list) do 
@@ -15074,7 +15074,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = datar
 }
-LuaTele.sendText(msg.chat_id,msg.id,'※ نتائج بحثك ل *'..search..'*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(msg.chat_id,msg.id,'♔ نتائج بحثك ل *'..search..'*',"md",false, false, false, false, reply_markup)
 end
 end
 if text and text:match("^(.*)$") then
@@ -15528,6 +15528,8 @@ keyboard.inline_keyboard = {
 {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+
+
 elseif text == 'الاوامر' then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*♔ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
@@ -15562,7 +15564,7 @@ data = {
 }
 return send(msg_chat_id,msg_id, [[*
 ♔ توجد ♔ 6 اوامر في البوت
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ 1 ♔ اوامر الحمايه
 ♔ 2 ♔ اوامر الادمنيه
 ♔ 3 ♔ اوامر المدراء
@@ -15852,7 +15854,7 @@ if Redis:get(black.."name bot type : ") == "photo" then
     end
           local NamesBot = (Redis:get(black.."Name:Bot") or "تايجر")
       local BotName = {
-      "اسمي "..NamesBot.." يبن العاميه",
+      "اسمي "..NamesBot.." يبن العاميه🙄❤",
       "يارب يكون موضوع مهم بس",
       "هو يوم مهبب انا عارف..عاوز اي ؟",
       "اسمي "..NamesBot.." يا كفيف",
@@ -15926,6 +15928,130 @@ if x ~= 0 then
 return send(msg_chat_id,msg_id,'*♔ العدد الكلي { '..#list..' } للمجموعات \n♔ تم العثور على { '..x..' } مجموعات البوت ليس ادمن \n♔ تم تعطيل الجروب ومغادره البوت من الوهمي *',"md")
 else
 return send(msg_chat_id,msg_id,'*♔ العدد الكلي { '..#list..' } للمجموعات \n♔ لا توجد مجموعات وهميه*',"md")
+end
+end
+if text == 'تغير الايدي' or text == 'تغيير الايدي' then 
+if msg.Managers or msg.Mamagers then
+local List = {
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+゠𝚄𝚂𝙴𝚁 𖨈 #username 𖥲 .
+゠𝙸𝙳 𖨈 #id 𖥲 .
+゠𝙼𝚂𝙶 𖨈 #msgs 𖥲 .
+゠𝚂𝚃𝙰 𖨈 #stast 𖥲 .
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+𖣘│ᴜѕᴇʀɴᴀᴍᴇ ➥• #username .
+𖣘│ʏᴏᴜʀ ɪᴅ ➥• #id  .
+𖣘│ᴍѕɢѕ ➥• #msgs .
+𖣘│ѕᴛᴀᴛѕ ➥• #stast .
+𖣘│ᴇᴅɪᴛ ᴍsɢ ➥• #edit .
+𖣘│ᴅᴇᴛᴀɪʟs ➥• #auto . 
+𖣘│ɢᴀᴍᴇ ➥• #game .
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+➮- 𝒖𝒔𝒆𝒓𓂅 #username 𓍯. 💕
+➭- 𝒊𝒅 𓂅 #id 𓍯. 💕
+➭- 𝒎𝒔𝒈𝒆𓂅 #msgs 𓍯. 💕
+➭- 𝒔𝒕𝒂𓂅 #stast 𓍯. 💕
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+𓆰 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝑻𝒐 𝑮𝒓𝒐𝒖𝒑 ★
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+• 🖤│𝑼𝑬𝑺 : #username ‌‌‏⚚
+• 🖤│𝑰𝑫 : #id ‌‌‏♕
+• 🖤│𝑴𝑺𝑮 : #msgs 𓆊
+• 🖤│𝑺𝑻𝑨 : #stast 🧙🏻‍♂ ☥
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+┌ 𝐔𝐒𝐄𝐑 𖤱 #username 𖦴 .
+├ 𝐈𝐃 𖤱 #id 𖦴 .
+├ 𝐌𝐒𝐆 𖤱 #msgs 𖦴 .
+└ 𝐒𝐓𝐀 𖤱 #stast 𖦴 .
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤??𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+𓄼🇮?? 𝑼𝒔𝒆𝒓𝑵𝒂𝒎𝒆 :#username 
+𓄼🇮🇶 𝒊𝒅 : #id 
+𓄼🇮🇶 𝑴𝒔𝒈𝒔 : #msgs
+𓄼🇮🇶 𝑺𝒕𝒂𝒔𝒕 : #stast 
+𓄼🇮🇶 𝑮𝒂𝒎𝒆𝑺 : #game 
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+𓄼🇾🇪 𝑼𝒔𝒆𝒓𝑵𝒂𝒎𝒆 : #username 
+𓄼🇾🇪 𝒊𝒅 : #id 
+𓄼🇾🇪 𝑴𝒔𝒈𝒔 : #msgs
+𓄼🇾🇪 𝑺𝒕𝒂𝒔𝒕 : #stast 
+𓄼🇾🇪 𝑮𝒂𝒎𝒆𝑺 : #game 
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+𓄼🇸🇦 𝑼𝒔𝒆𝒓𝑵𝒂𝒎𝒆 : #username 
+𓄼🇸🇦 𝒊𝒅 : #id 
+𓄼🇸🇦 𝑴𝒔𝒈𝒔 : #msgs
+𓄼🇸🇦 𝑺𝒕𝒂𝒔𝒕 : #stast 
+𓄼🇸🇦 𝑮𝒂𝒎𝒆𝑺 : #game 
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+#Description
+ٴ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+•🧣┊ يـوزرك ⇜ #username 
+•📨┊ رسـائلك ⇜ #msgs 
+•🎟┊ ايديـك ⇜ #id   
+•🎩┊ رتبتـك ⇜ #stast 
+•🌬┊ جفصاتـك ⇜ #edit  
+•🏆┊ تفاعـلك ⇜ #auto 
+•🏂┊ نبذتـك ⇜ #bio 
+ٴ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+•➞ 𝒖𝒔𝒆𝒓𓂅 #username 𓍯💞.
+•➞ 𝒊𝒅 𓂅 #id 𓍯💞.
+•➞ 𝒎𝒔𝒈𝒆𓂅 #msgs 𓍯💞.
+•➞ 𝒔𝒕𝒂𓂅 #stast 𓍯💞.
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+☆• 𝐮𝐬𝐞𝐫 : #username 𖣬  
+☆• 𝐢𝐝  : #id 𖣬
+☆• 𝐦𝐬𝐠  : #msgs 𖣬 
+☆• 𝐬𝐭𝐚 : #stast 𖣬 
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+- 𓏬 𝐔𝐬𝐄𝐫 : #username 𓂅 .
+- 𓏬 𝐈𝐃 : #id 𓂅 .
+- 𓏬 𝐌𝐬𝐆  : #msgs 𓂅 .
+- 𓏬 𝐒𝐭𝐀 : #stast 𓂅 .
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]],
+[[
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+.𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , #username  
+.𖣂 𝙡𝘿 , #id  
+.𖣂 𝙢𝙨𝙂𝙨 , #msgs
+.𖣂 𝙨𝙩𝙖𝙨𝙩 , #stast  
+.𖣂 𝙂𝙖𝙢𝙨 , #game 
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
+]]}
+local Text_Rand = List[math.random(#List)]
+Redis:set(ZELZAL.."ZELZAL:Set:Id:Group"..msg.chat_id,Text_Rand)
+LuaTele.sendText(msg.chat_id,msg.id,'*𖥔┊تم تغييـر كليشـة الايـدي .. بنجـاح ☑️*\n\n*𖥔┊ارسـل ايدي لـ رؤيـة الكليشـة*',"md",true)
 end
 end
 if text == "سمايلات" or text == "سمايل" then
@@ -17018,6 +17144,7 @@ local CmdStart = '*\n♔ أهلآ بك في بوت '..(Redis:get(black.."Name:Bo
 '\n♔ ارفعه ادمن مشرف'..
 '\n♔ ارسل كلمة { تفعيل } ليتم تفعيل الجروب'..
 '\n♔ مطور البوت ♔ {'..UserSudo..'}*'
+'\n♔لعـرض كيبـورد الاوامـر الخـدميـة إضغـط ← /cmds *'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -17134,6 +17261,55 @@ data = {
 }
 }
 return send(msg_chat_id,msg_id,'♔اهلا بك عزيزي المطور ', 'md', false, false, false, false, reply_markup)
+end
+end
+if text == '/cmds' then
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'قسـم الحمايـه 🛡',type = 'text'},
+},
+{
+{text = 'ٴ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉•••ٴ',type = 'text'},
+},
+{
+{text = 'انمي ولد 👨‍🎤🎑',type = 'text'},{text = 'انمي بنت 👩‍🎤🎑',type = 'text'},
+},
+{
+{text = 'افتار ولد 🙋🏻‍♂🌁',type = 'text'},{text = 'افتار بنت 🙋🏻‍♀🌁',type = 'text'},
+},
+{
+{text = 'رمادي ولد 🧝🏻🏙',type = 'text'},{text = 'رمادي بنت 🧝🏻‍♀🏙', type = 'text'},
+},
+{
+{text = 'تطقيم حب ♥️🎆',type = 'text'},{text = 'بيست بنات 👯‍♀🎆',type = 'text'},
+},
+{
+{text = 'انمي ستوري 🎬',type = 'text'},{text = 'حالات واتس 🎬',type = 'text'},
+},
+{
+{text = 'ٴ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉•••ٴ',type = 'text'},
+},
+{
+{text = 'ريمكسات اغـاني 🎵',type = 'text'},{text = 'بصمـات ميمـز 🦹🏻‍♂', type = 'text'},
+},
+{
+{text = 'اشعـار صوتيـة 🎙',type = 'text'},{text = 'اغاني قصيرة 🎶', type = 'text'},
+},
+{
+{text = 'متحـركـات 🎆',type = 'text'},{text = 'صـور 🎇', type = 'text'},
+},
+{
+{text = 'رقيـة شرعيـة 🕋',type = 'text'},
+},
+{
+{text = 'ٴ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉•••ٴ',type = 'text'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي .. تصفح كيبورد خدمات البوت بالاسفل *', 'md', false, false, false, false, reply_markup)
 end
 end
 if text == "تفعيل البوت بصوره ♔" then
@@ -17422,7 +17598,7 @@ local chinfo = Redis:get(black.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-send(msg_chat_id,msg_id,'*♔عدد احصائيات البوت الكامله \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n♔عدد المجموعات : '..(Redis:scard(black..'ChekBotAdd') or 0)..'\n♔عدد المشتركين : '..(Redis:scard(black..'Num:User:Pv') or 0)..'*',"md",true)  
+send(msg_chat_id,msg_id,'*♔عدد احصائيات البوت الكامله \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n♔عدد المجموعات : '..(Redis:scard(black..'ChekBotAdd') or 0)..'\n♔عدد المشتركين : '..(Redis:scard(black..'Num:User:Pv') or 0)..'*',"md",true)  
 end
 if text == 'تغير كليشه المطور ♔' then
 if not msg.Devss then 
@@ -17486,7 +17662,7 @@ send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -17507,7 +17683,7 @@ send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -17528,7 +17704,7 @@ send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -17573,7 +17749,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return send(msg.chat_id,msg.id,'*\n♔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(black.."List:Rd:Sudo")
-text = "\n♔ قائمة الردود العامه \nــــــــــــــــــــــ♔ـــــــــــــــــــــ\n"
+text = "\n♔ قائمة الردود العامه \n••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••\n"
 for k,v in pairs(list) do
 if Redis:get(black.."Add:Rd:Sudo:Gif"..v) then
 db = "متحركه ♔"
@@ -17846,7 +18022,7 @@ local Info_Members = Redis:smembers(black.."BanAll:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد محظورين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه المحظورين عام  \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه المحظورين عام  \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 
@@ -17874,7 +18050,7 @@ local Info_Members = Redis:smembers(black.."Dev:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه مطورين البوت \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه مطورين البوت \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -17901,7 +18077,7 @@ local Info_Members = Redis:smembers(black.."Devss:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"♔ لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*♔ قائمه مطورين البوت \n ــــــــــــــــــــــ♔ـــــــــــــــــــــ*\n'
+ListMembers = '\n*♔ قائمه مطورين البوت \n ••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -17976,7 +18152,197 @@ end
 end 
 end --UserBot
 end -- File_Bot_Run
-
+if text == "اغاني قصيرة 🎶" then
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,140); 
+local Text ='*𖥔┊تم اختيار المقطع الصوتي لك*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "حالات واتس 🎬" then
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(296,400); 
+local Text ='*🎆┊حـالات واتـس قصيـرة ➧🧸♥️*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVideo?chat_id=' .. msg.chat_id .. '&video=https://t.me/RSHDO5/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "انمي ستوري 🎬" then
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(6,641); 
+local Text ='*🎆┊ستـوريات آنمـي قصيـرة ➧ 🖤🧧*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVideo?chat_id=' .. msg.chat_id .. '&video=https://t.me/AA_Zll/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "بصمـات ميمـز 🦹🏻‍♂" then
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Zelzaly = math.random(2,1201); 
+local zzzzl1l = '*𖥔┊اضغط الـزر لتغييـر مقطـع الميمـز*'
+data = {} 
+data.inline_keyboard = {
+{
+{text = 'ميمـز آخـر 🎙', callback_data= msg.sender.user_id..'/memz'}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id=" .. msg.chat_id .. "&voice=https://t.me/MemzDavid/"..Zelzaly.."&caption=" .. URL.escape(zzzzl1l).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
+end
+if text == "عـروض الافـلام 🎞" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,82); 
+local Text ='*𖥔┊تم اختيار الفلم لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/ZelzalMoves/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "انمي بنت 👩‍🎤🎑" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(3,825); 
+local Text ='*🎆┊افتـارات آنمـي بنـات ➧🧚🏻‍♀◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/shhdhn/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "انمي ولد 👨‍🎤🎑" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(3,556); 
+local Text ='*🎆┊افتـارات آنمـي ولـد ➧🙇🏻◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/dnndxn/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "صـور 🎇" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(4,1171); 
+local Text ='*𖥔┊تم اختيار الافتـار لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/PhotosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "معلومات عامة 🧩" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(3,270); 
+local Text ='*𖥔┊صـورة ومعلومـة 🛤💡*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/A_l3l/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "افتار بنت 🙋🏻‍♀🌁" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,63); 
+local Text ='*🎆┊افتـارات بنـات تمبلـرࢪ ➧🧚🏻‍♀◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/banaaaat1/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "افتار ولد 🙋🏻‍♂🌁" or text == "رمادي ولد 🧝🏻🏙" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,131); 
+local Text ='*🎆┊افتـارات ولـد ࢪمـاديه ➧🙇🏻🖤◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/shababbbbR/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "رمادي بنت 🧝🏻‍♀🏙" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,131); 
+local Text ='*🎆┊افتـارات بنـات ࢪمـاديه ➧🙇🏻‍♀🖤◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/banatttR/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "بيست بنات 👯‍♀🎆" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,30); 
+local Text ='*🎆┊افتـارات بيست تطقيـم بنـات ➧🧚🏻‍♀🧚🏻‍♀◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/Tatkkkkkim/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "تطقيم حب ♥️🎆" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,58); 
+local Text ='*🎆┊افتـارات تطـقيم حـب تمبلـرࢪ ➧??♥️◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/tatkkkkkimh/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "متحـركـات 🎆" then 
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,1075); 
+local Text ='*𖥔┊تم اختيار متحركه لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .. msg.chat_id .. '&animation=https://t.me/GifDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "ريمكسات اغـاني 🎵" then
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,612); 
+local Text ='*𖥔┊تم اختيار المقطع ريماكس لك 💞🎶*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "رقيـة شرعيـة 🕋" then
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(5,121); 
+local Text ='*𖥔┊تم اختيار مقطـع الرقيـة الشـرعيـة 🕋🤍*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/Rqy_1/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "اشعـار صوتيـة 🎙" then
+Redis:sadd(ZELZAL..'ZELZAL:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(7,592); 
+local Text ='*𖥔┊تم اختيار المقطع شعر لك*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
 function CallBackLua(data)
 
 if data and data.luatele and data.luatele == "updateNewInlineQuery" then
@@ -18394,7 +18760,7 @@ data = {
 local txx = "["..json.title.."](https://youtu.be/"..id..""
 LuaTele.editMessageText(ChatId,Msg_id,txx, 'md', true, false, reply_markup)
 else
-LuaTele.answerCallbackQuery(data.id, "※ هذا الامر لا يخصك ", true)
+LuaTele.answerCallbackQuery(data.id, "♔ هذا الامر لا يخصك ", true)
 end
 end
 if Text and Text:match('(%d+)sound/(.*)') then
@@ -18403,7 +18769,7 @@ local UserId = xd[1]
 local id = xd[2]
 if tonumber(IdUser) == tonumber(UserId) then
 local u = LuaTele.getUser(IdUser)
-LuaTele.answerCallbackQuery(data.id, "※ انتظر يتم التحميل ", true)
+LuaTele.answerCallbackQuery(data.id, "♔ انتظر يتم التحميل ", true)
 local url = io.popen('curl -s "https://xnxx.fastbots.ml/infovd.php?id='..id..'"'):read('*a')
 local json = JSON.decode(url)
 local link = "https://www.youtube.com/watch?v="..id
@@ -18422,11 +18788,11 @@ local p = p:gsub("'","-")
 local p = p:gsub('"',"-") 
 LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 os.execute("yt-dlp "..link.." -f 251 -o '"..title..".mp3'")
-LuaTele.sendAudio(ChatId,0,'./'..title..'.mp3',"※ ["..title.."]("..link..")\n※ حسب طلب ["..u.first_name.."](tg://user?id="..IdUser..")","md",tostring(time),title,p) 
+LuaTele.sendAudio(ChatId,0,'./'..title..'.mp3',"♔ ["..title.."]("..link..")\n♔ حسب طلب ["..u.first_name.."](tg://user?id="..IdUser..")","md",tostring(time),title,p) 
 sleep(2)
 os.remove(""..title..".mp3")
 else
-LuaTele.answerCallbackQuery(data.id, "※ هذا الامر لا يخصك ", true)
+LuaTele.answerCallbackQuery(data.id, "♔ هذا الامر لا يخصك ", true)
 end
 end
 if Text and Text:match('(%d+)video/(.*)') then
@@ -18435,7 +18801,7 @@ local UserId = xd[1]
 local id = xd[2]
 if tonumber(IdUser) == tonumber(UserId) then
 local u = LuaTele.getUser(IdUser)
-LuaTele.answerCallbackQuery(data.id, "※ انتظر يتم التحميل ", true)
+LuaTele.answerCallbackQuery(data.id, "♔ انتظر يتم التحميل ", true)
 local url = io.popen('curl -s "https://xnxx.fastbots.ml/infovd.php?id='..id..'"'):read('*a')
 local json = JSON.decode(url)
 local link = "https://www.youtube.com/watch?v="..id
@@ -18447,11 +18813,11 @@ local title = title:gsub("'","-")
 local title = title:gsub('"',"-") 
 LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 os.execute("yt-dlp "..link.." -f 18 -o '"..title..".mp4'")
-LuaTele.sendVideo(ChatId,0,'./'..title..'.mp4',"※ ["..title.."]("..link..")\n※ حسب طلب ["..u.first_name.."](tg://user?id="..IdUser..")","md") 
+LuaTele.sendVideo(ChatId,0,'./'..title..'.mp4',"♔ ["..title.."]("..link..")\n♔ حسب طلب ["..u.first_name.."](tg://user?id="..IdUser..")","md") 
 sleep(4)
 os.remove(""..title..".mp4")
 else
-LuaTele.answerCallbackQuery(data.id, "※ هذا الامر لا يخصك ", true)
+LuaTele.answerCallbackQuery(data.id, "♔ هذا الامر لا يخصك ", true)
 end
 end
 if Text and Text:match('(%d+)/UnKed') then
@@ -19213,11 +19579,11 @@ data = {
 }
 local TextHelp = [[*
 ♔ اوامر الحمايه اتبع مايلي ...
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ قفل ، فتح ♔ الامر 
 ♔ تستطيع قفل حمايه كما يلي ...
 ♔♔ بالتقييد ، بالطرد ، بالكتم 
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ الروابط
 ♔ المعرف
 ♔ التاك
@@ -19227,7 +19593,7 @@ local TextHelp = [[*
 ♔ المتحركه
 ♔ الملفات
 ♔الصور
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ الماركداون
 ♔ البوتات
 ♔ التكرار
@@ -19237,7 +19603,7 @@ local TextHelp = [[*
 ♔ الفيديو
 ♔ الانلاين
 ♔ الدردشه
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ القناه
 ♔ التوجيه
 ♔ الاغاني
@@ -19272,19 +19638,19 @@ data = {
 }
 local TextHelp = [[*
 ♔ اوامر ادمنية الجروب ...
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ رفع، تنزيل ♔ مميز
 ♔تاك للكل ، عدد الجروب
 ♔ كتم ، حظر ، طرد ، تقييد
 ♔ الغاء كتم ، الغاء حظر ، الغاء تقييد
 ♔ منع ، الغاء منع 
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ عرض القوائم كما يلي ...
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ المكتومين
 ♔ المميزين 
 ♔ قائمه المنع
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ تثبيت ، الغاء تثبيت
 ♔ الرابط ، الاعدادات
 ♔ الترحيب ، القوانين
@@ -19293,11 +19659,11 @@ local TextHelp = [[*
 ♔ جهاتي ،ايدي ، رسائلي
 ♔ تعديلاتي ، نقاطي
 ♔ كشف البوتات
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ وضع ، ضع ♔ الاوامر التاليه 
 ♔ اسم ، رابط ، صوره
 ♔ قوانين ، وصف ، ترحيب
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ حذف ، مسح ♔ الاوامر التاليه
 ♔ قائمه المنع ، المحظورين 
 ♔ المميزين ، المكتومين ، القوانين
@@ -19419,26 +19785,26 @@ data = {
 }
 local TextHelp = [[*
 ♔ اوامر المدراء في الجروب
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ رفع ، تنزيل ♔ ادمن
 ♔ الادمنيه 
 ♔ رفع، كشف ♔ القيود
 ♔ تنزيل الكل ♔ بالرد ، بالمعرف
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ لتغيير رد الرتب في البوت
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ تغيير رد ♔ اسم الرتبه والنص
 ♔ المطور ، المنشئ الاساسي
 ♔ المنشئ ، المدير ، الادمن
 ♔ المميز ، العضو
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ تفعيل ، تعطيل ♔ الاوامر التاليه ↓
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ الايدي ، الايدي بالصوره
 ♔ الردود العامه ، الردود
 ♔ اطردني ، الالعاب ، الرفع
 ♔ الحظر ، الرابط 
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ تعين ، مسح ♔الايدي 
 ♔ رفع الادمنيه ، مسح الادمنيه
 ♔ الردود ، مسح الردود
@@ -19473,12 +19839,12 @@ data = {
 }
 local TextHelp = [[*
 ♔ اوامر المنشئ الاساسي
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ رفع ، تنزيل ♔ منشئ 
 ♔ المنشئين ، مسح المنشئين
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ اوامر المنشئ الجروب
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ رفع ، تنزيل ♔  مدير
 ♔ المدراء ، مسح المدراء
 ♔ اضف رسائل ♔  بالرد او الايدي
@@ -19513,23 +19879,23 @@ data = {
 }
 local TextHelp = [[*
 ♔ اوامر المطور الاساسي
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ حظر عام ، الغاء العام
 ♔ اضف ، حذف ♔ مطور
 ♔ قائمه العام ، مسح قائمه العام
 ♔ المطورين ، مسح المطورين
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ اضف ، حذف ♔  رد عام 
 ♔وضع ، حذف ♔ كليشه المطور
 ♔ مسح الردود العامه ، الردود العامه
 ♔ تعين عدد الاعضاء ♔ العدد
 ♔ تحديث
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ تفعيل ، تعطيل ♔  الاوامر التاليه ↓
 ♔ البوت الخدمي ، المغادرة ، الاذاعه
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ اوامر المطور في البوت
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ تفعيل ، تعطيل ، الاحصائيات
 ♔ رفع، تنزيل ♔ منشئ اساسي
 ♔ رفع، تنزيل ♔ مالك
@@ -19565,9 +19931,9 @@ data = {
 }
 local TextHelp = [[*
 ♔ اوامر التسلية
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ رفع ، تنزيل ♔ الاوامر التاليه ↓
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ غبي 
 ♔ سمب
 ♔ حمار
@@ -19577,9 +19943,9 @@ local TextHelp = [[*
 ♔ متوحد
 ♔ متوحده
 ♔ كلب 
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ اوامر التاك 
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ الاغبياء
 ♔ الحمير
 ♔ الخولات
@@ -19588,9 +19954,9 @@ local TextHelp = [[*
 ♔ الكلاب
 ♔ العرر
 ♔ القرود
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ اوامر الترفيه 
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ زخرفه
 ♔ حساب العمر
 ♔ اسمي
@@ -19603,6 +19969,7 @@ local TextHelp = [[*
 ♔ مثال معني ميدو
 ♔ انصحني 
 ♔ دوله + واتبع التعليمات
+♔تغيير الايدي+تغير ايدي
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -19685,7 +20052,7 @@ data = {
 }
 local TextHelp = [[*
 ♔ قائمه الالعاب البوت
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ لعبة المختلف ♔ المختلف
 ♔ لعبة الامثله ♔ امثله
 ♔ لعبة العكس ♔ العكس
@@ -19702,7 +20069,7 @@ local TextHelp = [[*
 ♔ لعبة الصراحه والجرأة ♔ صراحه
 ♔ لعبه باد للأسئله +18 ♔ باد
 ♔ لعبه جريمتي ويقوم البوت بإعطائك جريمه ♔ جريمتي
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ نقاطي ♔ لعرض عدد الارباح
 ♔ بيع نقاطي ♔ { العدد } ♔ لبيع كل نقطه مقابل {50} رساله
 *]]
@@ -19736,7 +20103,7 @@ data = {
 }
 local TextHelp = [[*
 ♔ توجد ♔ 6 اوامر في البوت
-ــــــــــــــــــــــ♔ـــــــــــــــــــــ
+••┉┉┉┉𝙎𝙤𝙐𝙧𝘾𝙚 𝙏𝙞𝙂𝙚𝙍┉┉┉┉┉┉••
 ♔ 1 ♔ اوامر الحمايه
 ♔ 2 ♔ اوامر الادمنيه
 ♔ 3 ♔ اوامر المدراء
@@ -20505,6 +20872,61 @@ GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,'❬ ✔️ ❭',nil,nil,nil,ni
 LuaTele.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,1, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, GetAdminsNum(ChatId,UserId[2]).promote})
 end
 end
+end
+elseif Text and Text:match('(%d+)/zelzal_iraq') then
+local UserId = Text:match('(%d+)/zelzal_iraq')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(ZELZAL.."ZELZAL:zelzal:iraqq"..ChatId,true) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:yemenn"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:egibtt"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:syriaa"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:ksaa"..ChatId) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallRodood'},},}}
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ⦁ تم تفعيل ردود البوت ع اللهجـه عراقيـة ✓ *").unLock, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/zelzal_yemen') then
+local UserId = Text:match('(%d+)/zelzal_yemen')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(ZELZAL.."ZELZAL:zelzal:yemenn"..ChatId,true) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:iraqq"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:egibtt"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:syriaa"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:ksaa"..ChatId) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallRodood'},},}}
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ⦁ تم تفعيل ردود البوت ع اللهجـه اليمنيـة ✓ *").unLock, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/zelzal_egibt') then
+local UserId = Text:match('(%d+)/zelzal_egibt')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(ZELZAL.."ZELZAL:zelzal:egibtt"..ChatId,true) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:yemenn"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:iraqq"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:syriaa"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:ksaa"..ChatId) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallRodood'},},}}
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ⦁ تم تفعيل ردود البوت ع اللهجـه المصريـة ✓ *").unLock, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/zelzal_syria') then
+local UserId = Text:match('(%d+)/zelzal_syria')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(ZELZAL.."ZELZAL:zelzal:syriaa"..ChatId,true) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:yemenn"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:egibtt"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:iraqq"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:ksaa"..ChatId) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallRodood'},},}}
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ⦁ تم تفعيل ردود البوت ع اللهجـه السوريـة ✓ *").unLock, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/zelzal_ksa') then
+local UserId = Text:match('(%d+)/zelzal_ksa')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(ZELZAL.."ZELZAL:zelzal:ksaa"..ChatId,true) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:yemenn"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:egibtt"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:syriaa"..ChatId) 
+Redis:del(ZELZAL.."ZELZAL:zelzal:iraqq"..ChatId) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallRodood'},},}}
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ⦁ تم تفعيل ردود البوت ع اللهجـه الخليجيـة ✓ *").unLock, 'md', true, false, reply_markup)
 end
 if Text and Text:match('(%d+)/groupNum2//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNum2//(%d+)')}
